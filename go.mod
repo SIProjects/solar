@@ -1,4 +1,4 @@
-module github.com/qtumproject/solar
+module github.com/sicashproject/solar
 
 go 1.15
 

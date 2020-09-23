@@ -1,8 +1,8 @@
 pragma solidity ^0.4.0;
 
-contract QtumTest {
+contract SICashTest {
    uint storedNumber;
-   function QtumTest() {
+   function SICashTest() {
        storedNumber=1;
    }
    function setNumber(uint number) public {

@@ -1,37 +1,37 @@
 # Install
 
 ```
-go get -u github.com/qtumproject/solar/cli/solar
+go get -u github.com/sicashproject/solar/cli/solar
 ```
 
 `solar` assumes that the [Solidity compiler](https://github.com/ethereum/solidity) is already installed.
 
 # Prototype for Smart Contract deployment tool
 
-## QTUM
+## SICASH
 
-Start qtumd in regtest mode:
-
-```
-qtumd -regtest -rpcuser=howard -rpcpassword=yeh
-```
-
-Use env variable to specify the local qtumd RPC node:
+Start sicashd in regtest mode:
 
 ```
-export QTUM_RPC=http://howard:yeh@localhost:13889
+sicashd -regtest -rpcuser=howard -rpcpassword=yeh
 ```
 
-## QTUM Docker
+Use env variable to specify the local sicashd RPC node:
 
-You can run qtumd with docker, which comes bundled with solar (and `solc`):
+```
+export SICASH_RPC=http://howard:yeh@localhost:13889
+```
+
+## SICASH Docker
+
+You can run sicashd with docker, which comes bundled with solar (and `solc`):
 
 ```
 docker run -it --rm \
   --name myapp \
   -v `pwd`:/dapp \
   -p 3889:3889 \
-  hayeah/qtumportal
+  hayeah/sicashportal
 ```
 
 Then you enter into the container by running:
@@ -225,8 +225,8 @@ Compile Solidity contracts.
 
 Flags:
   --help                     Show context-sensitive help (also try --help-long and --help-man).
-  --qtum_rpc=QTUM_RPC        RPC provider url
-  --qtum_sender=QTUM_SENDER  (qtum) Sender UTXO Address
+  --sicash_rpc=SICASH_RPC        RPC provider url
+  --sicash_sender=SICASH_SENDER  (sicash) Sender UTXO Address
   --eth_rpc=ETH_RPC          RPC provider url
   --env="development"        Environment name
   --repo=REPO                Path of contracts repository

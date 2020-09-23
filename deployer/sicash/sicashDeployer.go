@@ -1,24 +1,24 @@
-package qtum
+package sicash
 
 import (
 	"net/url"
 	"time"
 
-	"github.com/qtumproject/solar/deployer"
+	"github.com/sicashproject/solar/deployer"
 
-	"github.com/qtumproject/solar/b58addr"
+	"github.com/sicashproject/solar/b58addr"
 
 	"math/rand"
 
 	"github.com/pkg/errors"
-	"github.com/qtumproject/solar/contract"
+	"github.com/sicashproject/solar/contract"
 )
 
 type Deployer struct {
 	rpc *RPC
 	*contract.ContractsRepository
 
-	// qtum base58 sender address used to create a contract.
+	// sicash base58 sender address used to create a contract.
 	senderAddress string
 }
 
@@ -57,7 +57,7 @@ func (d *Deployer) ConfirmContract(c *contract.DeployedContract) (err error) {
 }
 
 func (d *Deployer) CreateContract(c *contract.CompiledContract, jsonParams []byte, opts *deployer.Options) (err error) {
-	// TODO: dry out similar CreateContract code from eth and qtum deployers
+	// TODO: dry out similar CreateContract code from eth and sicash deployers
 	name := opts.Name
 
 	if !opts.Overwrite {
